@@ -62,6 +62,12 @@ public static class Prime
             threads[i].Start();
         }
 
+        foreach (var thread in threads)
+        {
+            thread.Join();
+        }
+
+        return result;
     }
 
     #endregion
