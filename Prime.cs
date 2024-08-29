@@ -2,17 +2,18 @@
 public static class Prime
 {
     #region V1
-    public static long InRangev1(long start, long end)
+    public static long InRangeV1(long start, long end)
     {
         long result = 0;
         for(var number = start; number < end; number ++)
         {
-            if (IsPrimev1(number))
+            if (IsPrime(number))
                 result++;
         }
 
         return result;
     }
+    #endregion
 
     private static bool IsPrime(long number)
     {
@@ -26,10 +27,8 @@ public static class Prime
         return true;
     }
 
-    #endregion
-
     #region V2
-    private static long InRangeV2(long start, long end)
+    public static long InRangeV2(long start, long end)
     {
         long result = 0;
         var lockObject = new object();
@@ -58,7 +57,7 @@ public static class Prime
                     }
                 }
             });
-
+            
             threads[i].Start();
         }
 
