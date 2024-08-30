@@ -62,4 +62,27 @@ public class ThreadTest
         }
 
     }
+
+    public static void V1_3(int start, int end)
+    {
+        var numberOfThreads = (long)Environment.ProcessorCount;
+        var threads = new Thread[numberOfThreads];
+        
+
+        for (int i = 0; i < numberOfThreads; i++)
+        {
+            var current = i;
+
+            if (i == 12)
+                Console.WriteLine("opa");
+
+            threads[i] = new Thread(() =>
+            {
+                Console.WriteLine(threads[current]);
+            });
+
+            threads[i].Start();
+        }
+
+    }
 }

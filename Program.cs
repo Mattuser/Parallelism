@@ -12,4 +12,4 @@ var sw = new Stopwatch();
 //    $"({Environment.ProcessorCount} processors).");
 
 
-ThreadTest.V1_2(1, 10);
+ThreadTest.V1_3(1, 10);
